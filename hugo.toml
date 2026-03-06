@@ -1,0 +1,82 @@
+baseURL = "https://victorhugo.dev"
+languageCode = "en-us"
+title = "Victor Hugo"
+theme = "hugo-neso"
+
+[minify]
+minifyOutput = true
+
+[build]
+[build.buildStats]
+enable = true
+[[build.cachebusters]]
+source = 'assets/notwatching/hugo_stats\.json'
+target = 'css'
+[[build.cachebusters]]
+source = '(postcss|tailwind)\.config\.js'
+target = 'css'
+[module]
+[[module.mounts]]
+source = 'assets'
+target = 'assets'
+[[module.mounts]]
+disableWatch = true
+source = 'hugo_stats.json'
+target = 'assets/notwatching/hugo_stats.json'
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.parser]
+# Recommended: do not wrap <img> in <p> (the theme provides proper spacing)
+wrapStandAloneImageWithinParagraph = false
+
+[markup.goldmark.parser.attribute]
+block = true
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.highlight]
+noClasses = false
+
+[markup.tableOfContents]
+startLevel = 2
+endLevel = 3
+
+[[menus.main]]
+identifier = "search"
+name       = "Search"
+pageRef    = "/search"  # search page
+weight     = 50
+
+#[[menus.main]]
+#identifier = "Custom URL"
+#name       = "Custom URL"
+#url        = "https://example.com"  # external link
+#weight     = 60
+
+[params]
+[params.neso]
+support_theme_author=false
+[params.neso.home]
+display_mode = "profile"
+[params.neso.home.profile]
+avatar_image="me.png"
+avatar_image_alt_text="yes, its me."
+[params.neso.seo]
+site_author="Victor Hugo"
+[params.neso.social]
+[[params.neso.social.links]]
+name = "Github"
+url  = "https://github.com/victorhugoroch"
+[[params.neso.social.links]]
+name = "Linkedin"
+url  = "https://www.linkedin.com/in/victorhugorch"
+
+[languages]
+[languages.en]
+languageName = "English"
+weight = 1
+[languages.pt]
+languageName = "Português"
+weight = 2
