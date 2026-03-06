@@ -2,6 +2,12 @@
   "devDependencies": {
     "@tailwindcss/cli": "^4.2.1",
     "@tailwindcss/typography": "^0.5.19",
+    "gh-pages": "^6.3.0",
     "tailwindcss": "^4.2.1"
+  },
+  "scripts": {
+    "dev": "hugo server",
+    "build": "hugo --gc --minify --cleanDestinationDir",
+    "deploy": "npm run build && gh-pages -d public"
   }
 }
