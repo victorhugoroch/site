@@ -9,5 +9,8 @@ hugo.exe
 hugo.darwin
 hugo.linux
 
+.idea
+.DS_Store
+
 # Node modules
 node_modules/
